@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import CartProvider from './contexts/CartContext';
 import './App.css';
 import HeaderFooter from './components/HeaderFooter';
 import Home from './components/Home'
@@ -9,14 +10,16 @@ import NotFound from './components/NotFound'
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<HeaderFooter />}>
-          <Route index element={<Home />}/>
-          <Route path='/ProductDetails' element={<ProductDetails/>}/>
-          <Route path='/Products' element={<Products/>} />
-          <Route path='*' element={<NotFound/>} />
-        </Route>
-      </Routes> 
+      <CartProvider>
+        <Routes>
+          <Route path='/' element={<HeaderFooter />}>
+            <Route index element={<Home />}/>
+            <Route path='/ProductDetails/:id' element={<ProductDetails/>}/>
+            <Route path='/Products' element={<Products/>} />
+            <Route path='*' element={<NotFound/>} />
+          </Route>
+        </Routes> 
+      </CartProvider>
     </BrowserRouter>
   );
 }
