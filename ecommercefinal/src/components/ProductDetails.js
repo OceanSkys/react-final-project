@@ -1,17 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { QuantityPicker } from 'react-qty-picker';
+import { CartContext } from "../contexts/CartContext";
 
 export default function ProductsPicker() {
+    const { cart, setCart } = useContext(CartContext);
     const [details, setDetails] = useState([]);
+    let navigate = useNavigate();
     let params = useParams();
     console.log(params)
 
-
-
-
-
-    
     const getProducts = async () => {
 
         console.log("params is: ", params);
@@ -29,6 +28,12 @@ export default function ProductsPicker() {
         // console.log('this is details', data);
       }, [])
 
+      const getPickerValue = (value) =>{
+        details.quantity = value;
+        
+        console.log(details.quantity)
+      };
+
   return (
     <div className="container">
       <div style={{border: 'solid', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}} className="row">
@@ -45,7 +50,10 @@ export default function ProductsPicker() {
                 <p className='Product-Description'>{details?.description}</p>
               </div>
             </div>
-          </div>          
+          </div>       
+          <QuantityPicker min={1} max={10} value={0} onChange={getPickerValue} smooth/> 
+          <button onClick={ () => setCart([...cart, details])}>Add to cart</button>   
+          <button onClick={() => navigate(`/cart`)}>Go to Cart</button>
         {/* <NavLink to="/productdetails" className="btn btn-primary col-md-2 fw-bold justify-content-end  mb-5" type="submit">Let's Shop!</NavLink> */}
       </div>
     </div>

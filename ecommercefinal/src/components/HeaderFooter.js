@@ -16,8 +16,8 @@ import { Outlet, NavLink } from 'react-router-dom'
             <div className="Navs">
               {/* Nav Links that take you to different page */}
               <NavLink to='/' style={({ isActive }) => styleByActiveStatus(isActive)}>Home</NavLink>
-              {/* <NavLink to='/ProductDetails' style={({ isActive }) => styleByActiveStatus(isActive)}>Prod-Details</NavLink> */}
               <NavLink to='/Products' style={({ isActive }) => styleByActiveStatus(isActive)}>Products</NavLink>
+              <NavLink to='/Cart' style={({ isActive }) => styleByActiveStatus(isActive)}>Cart</NavLink>
             </div>
         </div>
           <div style={{ padding: 40 }}>
