@@ -38,6 +38,9 @@ export default function ProductsPicker() {
 //     })(elements[i]);
 //   }
 
+ 
+
+
 
   // useEffect(() => {
   //   console.log(products);
@@ -47,7 +50,6 @@ export default function ProductsPicker() {
     <div className="FrontPage-Container">
       <h1 className="Store-Name">Jeremy's Store</h1>
       {/* <div className="Product-Row"> */}
-
         <NavLink to="/products" type="submit">Let's Shop!</NavLink>
       {/* </div> */}
     </div>
