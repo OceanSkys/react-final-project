@@ -37,30 +37,32 @@ export default function Cart() {
 
     return (
 
-      <div className="Product-Container2">
+      <div className="Product-Container3">
         <h1 className="">My Cart</h1>
+        <button onClick={() => navigate(`/products`)}>Go to Products</button>
+            <button onClick={() => navigate(`/Checkout`)}>Checkout</button>
         <div className="Product-Row2">
-            <div className='Product-Selection2'>
-              {deduped.map(( item, index) => (
-              <div key={index} className="">
-                <div className='Product-Image-Div' style={{containFit: 'content'}}>
-                  <img src={item.image} className="Image" style={{width: '100%', height: '100%', objectFit: 'contain', border: 'solid'}} />
-                </div>
-                <div className='Product-Desc-Title'>
-                    <h3>{item.title}:</h3>
-                    <h3>Quantity: {item.quantity}</h3>
-                    <h1>Total: ${(item.quantity * item.price).toFixed(2)}</h1>
-                </div>
-              </div>
-              ))}
-              {/* <h3>Quantity: {itemNames}, {quant}: {totalQuantity}</h3> */}
-              <h1>Total Amount: ${subTotal.toFixed(2)}</h1>
-            </div>
-          </div>
           <div className='Product-Selection2'>
+            {deduped.map(( item, index) => (
+            <div key={index} className="">
+              <div className='Product-Image-Div' style={{containFit: 'content'}}>
+                <img src={item.image} className="Image" style={{width: '100%', height: '100%', objectFit: 'contain', border: 'solid'}} />
+              </div>
+              <div className='Product-Desc-Title'>
+                  <h3>{item.title}:</h3>
+                  <h3>Quantity: {item.quantity}</h3>
+                  <h1>Total: ${(item.quantity * item.price).toFixed(2)}</h1>
+              </div>
+            </div>
+            ))}
+            {/* <h3>Quantity: {itemNames}, {quant}: {totalQuantity}</h3> */}
+            <h1>Total Amount: ${subTotal.toFixed(2)}</h1>
+          </div>
+          {/* <div className='Product-Selection2'>
             <button onClick={() => navigate(`/products`)}>Go to Products</button>
             <button onClick={() => navigate(`/Checkout`)}>Checkout</button>
-          </div>
+          </div> */}
+        </div>
       </div>
       );
     }

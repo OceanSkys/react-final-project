@@ -48,7 +48,7 @@ export default function Checkout() {
               <hr style={{height: '3px', color:'black', backgroundColor:'black'}}/>
               <div className='Product-Desc-Title'>
                 <h3>{item.title}:</h3>
-                <h3>Quantity: {  item.title === item.title && item.quantity}</h3>
+                <h3>Quantity: {item.title === item.title && item.quantity}</h3>
                 <h3>Individual Price: ${(item.price).toFixed(2)}</h3>
               </div>
             </div>
@@ -126,9 +126,9 @@ export default function Checkout() {
                   <input type="checkbox" name="checkout-checkbox" id="checkout-checkbox"/>
                   <h2 for="checkout-checkbox">Save this information for next time</h2>
                 </div> */}
-                <button style ={{width: '100px'}} onClick={() => {navigate(`/products`); setCart([])}}>Buy</button>
                 <div className="form-control-btn">
                 </div>
+                <button style ={{width: '100px', marginTop: '20px'}} onClick={() => {navigate(`/products`); setCart([])}}>Buy</button>
               </form>
             </section>
             {/* <button style ={{width: '100px'}} onClick={() => {navigate(`/products`); setCart([])}}>Buy</button> */}
