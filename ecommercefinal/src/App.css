@@ -120,6 +120,7 @@
   height: 530px;
   box-shadow: 5px 5px;
   background-color: white;
+  margin-right: 20px;
 }
 .Product-Selection {
   display: flex;
@@ -134,13 +135,25 @@
 }
 .Product-Selection2 {
   display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  background-color: aliceblue;
+  width: 750px;
+  height: 650px;
+  overflow-x: scroll;
+  padding: 30px;
+}
+.Product-Selection3 {
+  display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   background-color: aliceblue;
   width: 450px;
-  height: 800px;
+  height: 950px;
   overflow: auto;
   padding: 30px;
 }
@@ -151,7 +164,7 @@
   justify-content: center;
   align-items: center;
   width: 450px;
-  height: 700px;
+  height: 805px;
   overflow: auto;
   padding: 30px;
 }
@@ -162,9 +175,35 @@
   justify-content: center;
   align-items: center;
   width: 450px;
-  height: 800px;
+  height: 550px;
   padding: 30px;
-  background-color: aliceblue;
+  background-color: white;
+  margin: 30px;
+  border-radius: 15%;
+}
+.Product-Selection5 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  height: 600px;
+  padding: 30px;
+  margin: 30px;
+}
+.Product-Selection6 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  height: 765px;
+  padding: 30px;
+  background-color: white;
+  margin: 30px;
+  border-radius: 15%;
 }
 body{
   margin: 0;
@@ -240,7 +279,13 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 00px;
+}
+.Product-Desc-Title2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+margin-top: 10px;
 }
 .Product-Description {
   display: flex;
@@ -249,6 +294,13 @@ body{
   font-size: 2vh;
   text-align: center;
 
+}
+.Product-Description2 {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  font-size: 3vh;
+  text-align: left;
 }
 .Product-Title {
   display: flex;
@@ -276,25 +328,38 @@ body{
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  height: auto;
+  height: 800px;
   border: solid 5px black;
   contain: fit-content;
-
+  /* margin-bottom: 30px; */
+}
+.Product-Container4{
+  width: 100%;
+  height: auto;
+  border: solid;
 }
 .Product-Container {
   width: 100%;
   height: auto;
+
+}
+.Product-Container5 {
+  width: 100%;
+  height: auto;
+  border: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .Product-Container2 {
   display: flex;
   flex-direction: column; 
-  justify-content: center; 
+  justify-content: start; 
   align-items: center;  
   background-color: aliceblue;         
   width: fit-content;
   height: 955px;
   border: solid 5px black;
-  transform: translate(20%, 0%);
 }
 .Product-Container3 {
   display: flex;
@@ -303,10 +368,10 @@ body{
   align-items: center;  
   background-color: aliceblue;         
   width: fit-content;
-  height: 990px;
-  width: 1000px;
+  height: 850px;
+  width: 1300px;
   border: solid 5px black;
-  transform: translate(20%, 0%);
+  margin-bottom: 20px;
 }
 .FrontPage-Container {
   display: flex;
@@ -347,4 +412,50 @@ input {
 }
 label {
   font-size: 20px;
+}
+
+table {
+  margin: 0 auto;
+  text-align: center;
+  border-collapse: collapse;
+  border: 1px solid #d4d4d4;
+  font-size: 20px;
+  background: #fff;
+}
+ 
+table th, 
+table tr:nth-child(2n+2) {
+  background: #e7e7e7;
+}
+  
+table th, 
+table td {
+  padding: 20px 50px;
+}
+  
+table th {
+  border-bottom: 1px solid #d4d4d4;
+}
+.stars-outer {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+}
+ 
+.stars-outer::before {
+  content: "\f006 \f006 \f006 \f006 \f006";
+}
+ 
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+ 
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  color: #f8ce0b;
 }

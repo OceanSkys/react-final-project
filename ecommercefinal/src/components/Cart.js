@@ -36,7 +36,7 @@ export default function Cart() {
     }
 
     return (
-
+    <div className="container" style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', width: '100%', height: '850px'}}>
       <div className="Product-Container3">
         <h1 className="">My Cart</h1>
         <button onClick={() => navigate(`/products`)}>Go to Products</button>
@@ -44,9 +44,9 @@ export default function Cart() {
         <div className="Product-Row2">
           <div className='Product-Selection2'>
             {deduped.map(( item, index) => (
-            <div key={index} className="">
+            <div key={index} className="Product">
               <div className='Product-Image-Div' style={{containFit: 'content'}}>
-                <img src={item.image} className="Image" style={{width: '100%', height: '100%', objectFit: 'contain', border: 'solid'}} />
+                <img src={item.image} className="Image" style={{width: '300px', height: '320px'}} />
               </div>
               <div className='Product-Desc-Title'>
                   <h3>{item.title}:</h3>
@@ -56,7 +56,6 @@ export default function Cart() {
             </div>
             ))}
             {/* <h3>Quantity: {itemNames}, {quant}: {totalQuantity}</h3> */}
-            <h1>Total Amount: ${subTotal.toFixed(2)}</h1>
           </div>
           {/* <div className='Product-Selection2'>
             <button onClick={() => navigate(`/products`)}>Go to Products</button>
@@ -64,5 +63,6 @@ export default function Cart() {
           </div> */}
         </div>
       </div>
+    </div>
       );
     }
