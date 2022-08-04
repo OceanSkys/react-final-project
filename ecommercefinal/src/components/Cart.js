@@ -18,7 +18,8 @@ export default function Cart() {
     let totalQuantity = 0;
     let names = '';
     let itemNames = '';
-    
+    let quant = deduped.quantity;
+
     for (let i = 0; i < cart.length; i++) {
       subTotal += cart[i].price*cart[i].quantity;
       totalQuantity += cart[i].quantity

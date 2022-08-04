@@ -34,28 +34,28 @@ export default function Checkout() {
   return (
     <div className="Product-Container">
       <div className="Product-Container2">
-        <div style={{border: 'solid', borderColor: 'blue', display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', margin: '10px'}}>
+        <div style={{border: 'solid', backgroundColor:'aliceblue', display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', width: '100%', height: 'auto'}}>
           <button style={{height: '30px'}} onClick={() => navigate(`/products`)}>Go to Products</button>
           <h1 className="">My Cart</h1>
         </div>
         <div className="Product-Row2" style={{display: 'flex', flexDirection:'row'}}>
-
           <div className='Product-Selection2'>
             {deduped.map(( item, index) => (
-            <div key={index} className="">
-              <div className='Product-Image-Div' style={{fitObject: 'contain'}}>
-                <img src={item.image} className="Image"  width='300' height='400' />
+            <div key={index} className="Product">
+              <div className='Product-Image-Div'>
+                <img src={item.image} className="Image"  width='300' height='320' />
               </div>
+              <hr style={{height: '3px', color:'black', backgroundColor:'black'}}/>
               <div className='Product-Desc-Title'>
-                <h2>{item.title}:</h2>
-                <h2>Quantity: {  item.title === item.title && item.quantity}</h2>
-                <h2>${priced.toFixed(2)}</h2>
+                <h3>{item.title}:</h3>
+                <h3>Quantity: {  item.title === item.title && item.quantity}</h3>
+                <h3>Individual Price: ${(item.price).toFixed(2)}</h3>
               </div>
             </div>
             ))}
           </div>
-          <div className="Product-Selection3">
-            <div style={{border: 'solid', width: '400px', height: '100px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', paddingBottom: '20px'}}>
+          <div className="Product-Selection4">
+            <div style={{border: 'solid', backgroundColor: 'white', width: '400px', height: '100px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginBottom: '20px', boxShadow: '2px 2px'}}>
               <h2>Total Items: {totalQuantity}</h2>
               <h2>Total Amount: ${subTotal.toFixed(2)}</h2>
             </div>

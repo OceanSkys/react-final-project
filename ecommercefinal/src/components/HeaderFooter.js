@@ -1,16 +1,28 @@
 
 import { Outlet, NavLink } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
+import { useContext } from 'react';
+import { CartContext } from '../contexts/CartContext';
 
   export default function HeaderFooter() {
-    
+    const { cart, setCart } = useContext(CartContext);
     let navigate = useNavigate();
+
+    // let subTotal = 0;
+    // let totalQuantity = 0;
+    // let names = '';
 
     function styleByActiveStatus(isActive) {
       return isActive
         ? { fontWeight: "bold", textDecoration: "none" }
         : { fontWeight: "normal", textDecoration: "none" };
     }
+
+    // for (let i = 0; i < cart.length; i++) {
+    //   subTotal += cart[i].price*cart[i].quantity;
+    //   totalQuantity += cart[i].quantity
+    //   names += cart[i].title
+    // }
 
     return (
       <div className='body'>
@@ -23,7 +35,7 @@ import { useNavigate } from "react-router-dom";
               <NavLink to='/Products' style={({ isActive }) => styleByActiveStatus(isActive)}>Products</NavLink>
               <NavLink className='Cart-Row' to='/Cart' style={({ isActive }) => styleByActiveStatus(isActive)}>
               <p>Cart</p>
-              <p className='material-symbols-rounded'>shopping_cart</p>
+              <p className='material-symbols-rounded'>shopping_cart {cart.quantity}</p>
               </NavLink>
               <NavLink to='/Checkout' style={({ isActive }) => styleByActiveStatus(isActive)}>Checkout</NavLink>
             </div>
