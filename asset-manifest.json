@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/OceanSkys/react-final-project/static/css/main.d9798747.css",
+    "main.js": "/OceanSkys/react-final-project/static/js/main.046a1cb9.js",
+    "static/js/787.9e55745f.chunk.js": "/OceanSkys/react-final-project/static/js/787.9e55745f.chunk.js",
+    "index.html": "/OceanSkys/react-final-project/index.html",
+    "main.d9798747.css.map": "/OceanSkys/react-final-project/static/css/main.d9798747.css.map",
+    "main.046a1cb9.js.map": "/OceanSkys/react-final-project/static/js/main.046a1cb9.js.map",
+    "787.9e55745f.chunk.js.map": "/OceanSkys/react-final-project/static/js/787.9e55745f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d9798747.css",
+    "static/js/main.046a1cb9.js"
+  ]
+}
