@@ -1,9 +1,14 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import { useNavigate } from 'react-router-dom'
 import { CartContext } from '../contexts/CartContext';
+import  Confetti  from 'react-confetti';
 
 export default function Checkout() {
     const { cart, setCart } = useContext(CartContext);
+    const [height, setHeight] = useState(null);
+    const [width, setWidth] = useState(null);
+    const [show, setShow] = useState(false);
+    const confettiRef = useRef(null);
     let navigate = useNavigate();
     console.log(cart)
 
@@ -31,8 +36,19 @@ export default function Checkout() {
       priced += deduped[i].price
     }
 
+    useEffect(() => {
+      setHeight(confettiRef.current.clientHeight);
+      setWidth(confettiRef.current.clientWidth);
+    }, [])
+
   return (
-    <div className="Product-Container5">
+    <div className="Product-Container5" ref={confettiRef}>
+      <Confetti
+        recycle={show}
+        numberOfPieces={2000}
+        width={width}
+        height={height}
+      />
       <div className="Product-Container2">
         <div style={{border: 'solid', backgroundColor:'aliceblue', display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', width: '100%', height: 'auto'}}>
           <button style={{height: '30px'}} onClick={() => navigate(`/products`)}>Go to Products</button>

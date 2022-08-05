@@ -43,7 +43,7 @@ import { CartContext } from '../contexts/CartContext';
           <div style={{ padding: 40 }}>
           < Outlet />
           </div>
-        <div className="Copyright">Made by Jeremy</div>
+        <div className="Copyright">Made by Jeremy T.</div>
       </div>
     );
   }

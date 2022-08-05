@@ -120,7 +120,7 @@
   height: 530px;
   box-shadow: 5px 5px;
   background-color: white;
-  margin-right: 20px;
+  margin-right: 30px;
 }
 .Product-Selection {
   display: flex;
@@ -140,7 +140,7 @@
   justify-content: start;
   align-items: center;
   background-color: aliceblue;
-  width: 750px;
+  width: 950px;
   height: 650px;
   overflow-x: scroll;
   padding: 30px;
@@ -201,7 +201,7 @@
   width: 450px;
   height: 765px;
   padding: 30px;
-  background-color: white;
+  /* background-color: white; */
   margin: 30px;
   border-radius: 15%;
 }
@@ -336,7 +336,6 @@ margin-top: 10px;
 .Product-Container4{
   width: 100%;
   height: auto;
-  border: solid;
 }
 .Product-Container {
   width: 100%;
@@ -346,7 +345,6 @@ margin-top: 10px;
 .Product-Container5 {
   width: 100%;
   height: auto;
-  border: solid;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -458,4 +456,80 @@ table th {
 .stars-inner::before {
   content: "\f005 \f005 \f005 \f005 \f005";
   color: #f8ce0b;
+}
+.fadein {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position:absolute;
+  top:0px;
+  left:50%;
+  margin:auto;
+}
+.fadein img {
+  position:absolute;
+  left:185px;
+  top: 220px;
+  -webkit-animation-name: fade;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 9s;
+  animation-name: fade;
+  animation-iteration-count: infinite;
+  animation-duration: 9s;
+}
+.fadein2 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position:absolute;
+  top:0px;
+  left:50%;
+  margin:auto;
+}
+.fadein2 img {
+  position:absolute;
+  left:-485px;
+  top: 220px;
+  -webkit-animation-name: fade;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 9s;
+  animation-name: fade;
+  animation-iteration-count: infinite;
+  animation-duration: 9s;
+}
+@-webkit-keyframes fade {
+  0% {opacity: 0;}
+  20% {opacity: 1;}
+  33% {opacity: 1;}
+  53% {opacity: 0;}
+  100% {opacity: 0;}
+}
+@keyframes fade {
+  0% {opacity: 0;}
+  20% {opacity: 1;}
+  33% {opacity: 1;}
+  53% {opacity: 0;}
+  100% {opacity: 0;}
+}
+
+#f1 {
+  background-color: lightblue;
+}
+#f2 {
+  -webkit-animation-delay: -4s;
+}
+#f3 {
+  -webkit-animation-delay: -2s;
+}
+.floating2 {  
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-top: 5px;
+}
+@keyframes floating {
+  from { transform: translate(0,  0px); }
+  65%  { transform: translate(0, 15px); }
+  to   { transform: translate(0, -0px); }    
 }
