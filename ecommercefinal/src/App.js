@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import CartProvider from './contexts/CartContext';
 import './App.css';
 import HeaderFooter from './components/HeaderFooter';
@@ -11,20 +11,18 @@ import Checkout from './components/Checkout';
 
 function App() {
   return (
-    <BrowserRouter>
-      <CartProvider>
-        <Routes>
-          <Route path='/' element={<HeaderFooter />}>
-            <Route index element={<Home />}/>
-            <Route path='/ProductDetails/:id' element={<ProductDetails/>}/>
-            <Route path='/Products' element={<Products/>} />
-            <Route path='/Cart' element={<Cart/>} />
-            <Route path='/Checkout' element={<Checkout/>} />
-            <Route path='*' element={<NotFound/>} />
-          </Route>
-        </Routes> 
-      </CartProvider>
-    </BrowserRouter>
+    <CartProvider>
+      <Routes>
+        <Route path='/' element={<HeaderFooter />}>
+          <Route index element={<Home />}/>
+          <Route path='/ProductDetails/:id' element={<ProductDetails/>}/>
+          <Route path='/Products' element={<Products/>} />
+          <Route path='/Cart' element={<Cart/>} />
+          <Route path='/Checkout' element={<Checkout/>} />
+          <Route path='*' element={<NotFound/>} />
+        </Route>
+      </Routes> 
+    </CartProvider>
   );
 }
 
